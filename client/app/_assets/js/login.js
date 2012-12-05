@@ -143,5 +143,6 @@ function loadrm(user_name){
 	   	 $('#password').val('');
 	   	 $('#tmp-password').show();
 	   	 $('#password').hide();
+	   	 $('#tmp-password').triggerHandler("focus");
     }
 }
