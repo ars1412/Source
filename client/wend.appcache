@@ -1,0 +1,13 @@
+# 2012-09-17 v1.0.0
+
+CACHE MANIFEST
+/favicon.ico
+/js/jquery-1.8.0.js
+/js/jquery-ui.min.js
+/app/_assets/images/*
+
+NETWORK:
+# specify that the files should never be cached
+index.html
+
+FALLBACK:

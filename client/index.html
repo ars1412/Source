@@ -1,0 +1,808 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Fisil Mail</title>
+        <link href="favicon.ico" rel="shortcut icon">
+        <link rel="stylesheet"  href="app/_assets/css/app.css" >
+        <link rel="stylesheet"  href="app/_assets/css/landing_screen.css" >
+        <link rel="stylesheet"  href="app/_assets/css/jquery.mCustomScrollbar.css" >
+        <link rel="stylesheet"  href="js/jalert/jquery.alerts.css" >
+
+        <!--Script go here...-->
+        <script type="text/javascript" src="app/_assets/js/utils.js"></script>
+
+        <script type="text/javascript" src="js/socket.io.js"></script>
+        <script type="text/javascript" src="js/websocket.js"></script>
+        <script type="text/javascript" src="js/delivery.js"></script>
+
+        <!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
+        <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.core.js">
+                <script type="text/javascript" src="js/jquery.ui.widget.js">
+                <script type="text/javascript" src="js/jquery.ui.mouse.js">
+                <script type="text/javascript" src="js/jquery.ui.draggable.js">
+        
+                <!-- mousewheel plugin -->
+                <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+        <!-- custom scrollbars plugin -->
+        <script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+        <script type="text/javascript" src="js/slimScroll.min.js"></script>
+        <script type="text/javascript" src="js/modernizr.js"></script>
+        <script type="text/javascript" src="js/sjcl.js"></script>
+        <script type="text/javascript" src="js/crypt.js"></script>
+        <script type="text/javascript" src="js/client.js"></script>
+        <script type="text/javascript" src="js/jalert/jquery.alerts.js"></script>
+        <script type="text/javascript" src="app/_assets/js/login.js"></script>
+        <script type="text/javascript" src="app/_assets/js/app.js"></script>
+
+        <!-- login and add new script -->
+        <script type="text/javascript" src="app/_assets/js/common.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_archive.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_contact.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_favorite.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_group.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_logout.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_mail.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_setting.js"></script>
+        <script type="text/javascript" src="app/_assets/js/agent/handle_trash.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script> 
+        <script type="text/javascript" src="js/jquery.rc4.js"></script>
+    </head>
+    <body class="body" id="login-body"> 
+        <div data-role="page" id="ui-login-page" class="ui-page">
+
+            <div data-role="header" id="header">
+                <img src="app/_assets/images/Fisil-LoginScreen-Portrait-V1_03.png" class="ui-fisil-logo"/>
+            </div>
+            <div data-role="content">
+                <div id="error-msg" class="error-msg"></div>
+                <div class="login">
+                    <div class="login-input">
+                        <span class="ui-avatar"><img src="app/_assets/images/Fisil-LoginScreen-Portrait-V1_07.png" /></span>
+                        <input type="text" name="username" id="username" class="username" value="Username..."/>
+                    </div>
+                    <div class="login-input">
+                        <span class="ui-avatar"><img src="app/_assets/images/Fisil-LoginScreen-Portrait-V1_10.png"/></span>
+                        <input type="text" name="password" id="tmp-password" class="password" value="Password..."/>
+                        <input type="password" name="password" id="password" class="password" style="display: none;"/>
+                    </div>
+                    <div class="ui-go-btn" id="ui-go-btn">
+                        <img src="app/_assets/images/Fisil-LoginScreen-Portrait-V1_03_072.png"/>	
+
+                    </div>
+                    <div style="margin-top:6px;">
+                        <div class="ui-keep-login ui-keep-login-off" id="ui-keep-login">
+                        </div>
+                        <label class="ui-remember">Remember me</label>
+                        <a class="ui-lost-pass" href="#lost-pwd" id="ui-lost-pass">Forgot Password?</a>
+                        <a id="ui-sign-up" class="" href="#sign-up" style="top: 128px;">Sign up</a>
+                    </div>
+                </div>
+
+            </div>
+            	
+		 	<div id='version'>
+				VERSION 1.0.f1
+			</div> 
+
+            <div class="ui-footer-fisil" >
+                <div style="display: inline-block;">
+                    <img style="float: left;" src="app/_assets/images/Fisil-LoginScreen-Portrait-V1_19.png"/>
+                    <div style="float: left; text-align: left;">
+                        <span style="display: block; text-align: left; font-weight: bold;">NULLAM QUIS RISUS EGET EN MOLLIS VEUEO.</span>
+                        <span style="text-align: left;">Copyright &copy; 2012 FISIL. All Rights Reserved.</span>
+                    </div>
+                </div>	
+            </div>
+
+        </div>
+        <div class="ui-splash-loading" id="ui-splash-loading" style="display: none;">
+            <div class="ui-ajax-loader">
+                <img src="app/_assets/images/ajax-loader.gif">	
+            </div>
+        </div>
+
+        <div id="ui-container-dim" class="ui-container-dim" style="display:none;"></div>
+        <div id="ui-contaner" class="container" style="display:none;">
+            <div class="header">	
+                <div class="logo">
+                    <img src="app/_assets/images/Fisil-Archive-V1_06.png" class="ui-fisil-logo"/>	
+                </div>
+                <div id="ui-compose" class="ui-compose">
+                    <img src="app/_assets/images/ui-compose.png" />
+                </div>
+                <div class="search">
+                    <input class="search-text" type="text"/>
+                    <input class ="search-btn" type="button"/>
+                </div>
+            </div>
+            <div class="content">
+                <div class="menu-left">
+                    <ul>
+                        <li id="active" class="active message-a">
+                            <div class="logo">	
+                            </div>
+                        </li>
+                        <li class="message">
+                            <div class="logo" id="ui-msg-icon">	
+                            </div>
+                            <label>Messages</label>
+                        </li>
+                        <li class="contact">
+                            <div class="logo" id="ui-contacts-icon">	
+                            </div>
+                            <label>Contacts</label>
+                        </li>
+                        <li class="groups">
+                            <div class="logo" id="ui-groups-icon">	
+                            </div>
+                            <label>Groups</label>
+                        </li>
+                        <li class="favorite">
+                            <div class="logo" id="ui-favorites-icon">	
+                            </div>
+                            <label>Favorites</label>
+                        </li>
+                        <li class="archive">
+                            <div class="logo" id="ui-archives-icon">	
+                            </div>
+                            <label>Archive</label>
+                        </li>
+                        <li class="trash">
+                            <div class="logo" id="ui-trash-icon">	
+                            </div>
+                            <label>Trash</label>
+                        </li>
+                        <li class="setting">
+                            <div class="logo" id="ui-setting-icon">	
+                            </div>
+                            <label>Setting</label>
+                        </li>
+                        <li class="logout">
+                            <div class="logo" id="logo-log-out">	
+                            </div>
+                            <label>Logout</label>
+                        </li>
+                    </ul>
+                </div>	
+                <div class="content-center" id="content-center"><!-- Start primary content-->
+                    <!--▼ Mail List ▼-->
+                    <div id="ui-home" style="display: block;" class="ui-show">
+                        <ul style="display: block;" class="content-ul" id="current-content">
+                        </ul>
+                    </div><!--▲ END Mail List UI▲-->
+                    <!--▼ Compose new mail▼-->
+                    <div id="ui-compose-msg" style="display: none;" class="ui-hidden">
+                        <div class="setting-head">
+                            Compose Message
+                        </div>
+                        <ul class="content-ul compose-msg">
+                            <li>
+                                <label>To</label>
+                                <input type="text" id="receiver"/>
+                            </li>
+                            <!-- li>
+                                <label>Subject</label>
+                                <input type="text"/>
+                            </li -->
+                            <li>
+                                <label>Content</label>
+                                <textarea style="width: 560px; height: 200px; resize: none;" id="content-msg-to-send">
+                                </textarea>
+                            </li>
+                            <li style="text-align: right;margin-right: 30px;">
+                                <input type="button" value="Send" id="send-btn"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--▲ END compose mail UI▲-->
+                    <!--▼ Compose new mail group▼-->
+                    <div id="ui-compose-msg-group" style="display: none;" class="ui-hidden">
+                        <div class="setting-head">
+                            Compose Message
+                        </div>
+                        <ul class="content-ul compose-msg">
+                            <li>
+                                <label>To</label>
+                                <input type="text" id="receiver-group" readonly="readonly"/>
+                            </li>
+                            <!-- li>
+                                <label>Subject</label>
+                                <input type="text"/>
+                            </li -->
+                            <li>
+                                <label>Content</label>
+                                <textarea style="width: 560px; height: 200px; resize: none;" id="content-msg-to-send-group">
+                                </textarea>
+                            </li>
+                            <li style="text-align: right;margin-right: 30px;">
+                                <input type="button" value="Send" id="send-btn-group"/>
+                                <input type="hidden" id="receiver-group-id-hidden"/>
+                                <input type="hidden" id="receiver-group-name-hidden"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--▲ END compose mail group UI▲-->
+                    <div id="ui-reply-msg" style="display: none;" class="ui-hidden">
+                        <ul class="content-ul">
+                        </ul>
+                    </div>
+                    <!--▼ Contact UI▼-->
+                    <div id="ui-contacts" style="display: none;" class="ui-hidden">
+                        <div class="contact-column contact-left">
+                            <div class="contact-head">
+                                All Contacts
+                                <i id="add-new-contact" class="add-icon"></i>
+                            </div>
+                            <div class="column contact-content contact-column-1">
+                                <div class="contact-search" id="contact-search-box" style="display: none;">
+                                    <input type="text" class="contact-search-text" />
+                                    <input type="button"  class="contact-search-btn"/>
+                                </div>
+                                <div id="contact-search-placeholder" style="display: none;">
+                                </div>
+                                <div id="contact-placeholder">
+                                    <div style="padding: 20px 0 0 0;" class="contact-search-result contact-not-friend dragbox-content">
+                                        <div class="setting-name contact-draggable" id="draggable1">
+                                            <input type="hidden" value="username01" />
+                                            <div style="float: left; width: 200px;">
+                                                <label class="label-name">Username 01</label>
+                                                <label class="label-domain">www.yourdomain.com</label>
+                                            </div>
+                                            <div class="contact-action">
+                                                <i class="action-add">
+                                                </i>
+                                            </div>
+
+
+                                        </div>
+                                    </div>	
+                                    <div style="padding: 20px 0 0 0;" class="dragbox contact-friend dragbox-content">
+                                        <div class="setting-name contact-draggable" id="draggable">
+                                            <input type="hidden" value="username02" />
+                                            <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                            </div>
+                                            <div style="float: left; width: 200px;">
+                                                <label class="label-name">Username 02</label>
+                                                <label class="label-domain">www.yourdomain.com</label>
+                                            </div>
+                                            <div class="contact-action">
+                                                <i class="action-add">
+                                                </i>
+                                                <i class="action-delete">
+                                                </i>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div style="padding: 20px 0 0 0;" class="dragbox contact-not-friend dragbox-content">
+                                        <div class="setting-name contact-draggable">
+                                            <input type="hidden" value="username03" />
+                                            <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                            </div>
+                                            <div style="float: left; width: 200px;">
+                                                <label class="label-name">Username 03</label>
+                                                <label class="label-domain">www.yourdomain.com</label>
+                                            </div>
+                                            <div class="contact-action">
+                                                <i class="action-add">
+                                                </i>
+                                                <i class="action-delete">
+                                                </i>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div style="padding: 20px 0 0 0;" class="dragbox contact-not-friend dragbox-content">
+                                        <div class="setting-name contact-draggable">
+                                            <input type="hidden" value="username04" />
+                                            <div class="contact-avatar" style="background-image: url('app/_assets/images/sdf-songoku.jpg');">
+                                            </div>
+                                            <div style="float: left; width: 200px;">
+                                                <label class="label-name">Username 04</label>
+                                                <label class="label-domain">www.yourdomain.com</label>
+                                            </div>
+                                            <div class="contact-action">
+                                                <i class="action-add">
+                                                </i>
+                                                <i class="action-delete">
+                                                </i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column contact-column contact-right contact-column-2">
+                            <div class="contact-head">
+                                Group Contacts
+                            </div>
+                            <div id="droppable-new-contact" class="contact-create-new-g">
+                                <label style="font-weight: bold; font-size: 14px;">Create New Group</label>
+                                <br>
+                                <label style="font-weight: bold; font-size: 12px;">(Drop Contacts here)</label>
+                            </div>
+                            <div id="group-placeholder"><!--
+                            <div id="new-contact-group" style="display: block;" class="contact-group contact-group" >
+                                <div class="contact-g-head">
+                                    Group name ...	
+                                </div>
+                                <div class="contact-g-h-action">
+                                    <div class="action-set-background" style="display: none;">
+                                        <i class="i-color i-color-yellow" name="yellow">
+                                        </i>
+                                        <i class="i-color i-color-orange" name="orange">
+                                        </i>
+                                        <i class="i-color i-color-red" name="red">
+                                        </i>
+                                        <i class="i-color i-color-blue" name="blue">
+                                        </i>
+                                        <i class="i-color i-color-grey" name="grey">
+                                        </i>
+                                    </div>
+                                    <i class="add-icon"></i>		
+                                    <i class="set-background"></i>		
+                                    <i class="delete-icon"></i>		
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <div class="contact-group contact-group-yellow contact-group-common">
+                                <div class="contact-g-head">
+                                    Group name ...	
+                                </div>
+                                <div class="contact-g-h-action">
+                                    <div class="action-set-background" style="display: none;">
+                                        <i class="i-color i-color-yellow" name="yellow">
+                                        </i>
+                                        <i class="i-color i-color-orange" name="orange">
+                                        </i>
+                                        <i class="i-color i-color-red" name="red">
+                                        </i>
+                                        <i class="i-color i-color-blue" name="blue">
+                                        </i>
+                                        <i class="i-color i-color-grey" name="grey">
+                                        </i>
+                                    </div>
+                                    <i id="push-contact" class="add-icon"></i>		
+                                    <i id="set-background" class="set-background"></i>		
+                                    <i id="del-group" class="delete-icon"></i>		
+                                </div>
+
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+
+                                </div>	
+                            </div>
+                            <div class="contact-group contact-group-orange contact-group-common">
+                                <div class="contact-g-head">
+                                    Group name ...	
+                                </div>
+                                <div class="contact-g-h-action">
+                                    <div class="action-set-background" style="display: none;">
+                                        <i class="i-color i-color-yellow" name="yellow">
+                                        </i>
+                                        <i class="i-color i-color-orange" name="orange">
+                                        </i>
+                                        <i class="i-color i-color-red" name="red">
+                                        </i>
+                                        <i class="i-color i-color-blue" name="blue">
+                                        </i>
+                                        <i class="i-color i-color-grey" name="grey">
+                                        </i>
+                                    </div>
+                                    <i class="add-icon"></i>		
+                                    <i class="set-background"></i>		
+                                    <i class="delete-icon"></i>		
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+
+                                </div>	
+                            </div>
+                            <div class="contact-group contact-group-blue contact-group-common">
+                                <div class="contact-g-head">
+                                    Group name ...	
+                                </div>
+                                <div class="contact-g-h-action">
+                                    <div class="action-set-background" style="display: none;">
+                                        <i class="i-color i-color-yellow" name="yellow">
+                                        </i>
+                                        <i class="i-color i-color-orange" name="orange">
+                                        </i>
+                                        <i class="i-color i-color-red" name="red">
+                                        </i>
+                                        <i class="i-color i-color-blue" name="blue">
+                                        </i>
+                                        <i class="i-color i-color-grey" name="grey">
+                                        </i>
+                                    </div>
+                                    <i class="add-icon"></i>		
+                                    <i class="set-background"></i>		
+                                    <i class="delete-icon"></i>		
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+
+                                </div>
+                                <div class="setting-name">
+
+                                    <div class="contact-avatar" style="background-image: url('app/_assets/images/songoku.jpg');">
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <label class="label-name">Your Name</label>
+                                        <label class="label-domain">www.yourdomain.com</label>
+                                    </div>
+                                    <div class="contact-action">
+                                        <i class="action-delete">
+                                        </i>
+                                    </div>
+
+                                </div>
+                            </div>
+                                -->
+                            </div>
+
+                        </div>
+                    </div><!--▲ END Contact UI▲-->
+                    <!-- Group UI-->
+                    <div id="ui-groups" style="display: none;" class="ui-hidden">
+                        <div class="groups-head">
+                            <div class="groups-inhouse-team">Inhouse team group</div>
+                            <div class="groups-pro-team">Pro team group</div>
+                            <div class="groups-add"></div>
+                        </div>
+                        <ul style="display: block;" class="content-ul" id="current-content-9">
+                            <li class="user-online">
+                                <div class="backgroud-left">
+
+                                    <div class="background-left-top">
+                                    </div>
+                                    <div class="background-left-bottom">
+                                        <div class="reply-icon reply-btn">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-avatar" style="background-image: url('_assets/images/songoku.jpg');">
+
+                                </div>
+                                <div class="user-header">
+                                    <label class="user-name">
+                                        Pharetra Tristique Ultricies	
+                                    </label>
+                                    <div class="right">
+                                        <div class="user-icon icon-delete">
+                                        </div>
+                                        <div class="separator"></div>
+
+                                        <div id="ui-archives-shortcut" class="user-icon icon-archive">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div id="ui-favorites-shortcut" class="user-icon icon-favorite-a">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="user-icon icon-reply reply-btn">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <label class="user-date">
+                                            12 July 2012 - 11:20 PM
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                </div>
+                            </li>
+                            <li class="user-off">
+                                <div class="backgroud-left">
+
+                                    <div class="background-left-top">
+                                    </div>
+                                    <div class="background-left-bottom">
+                                        <div class="reply-icon">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-avatar" style="background-image: url('_assets/images/Fisil-LoginScreen-Portrait-V1_03.png');">
+                                </div> 
+
+                                <div class="user-header">
+                                    <label class="user-name">
+                                        Pharetra Tristique Ultricies	
+                                    </label>
+                                    <div class="right">
+                                        <div class="user-icon icon-delete">
+                                        </div>
+                                        <div class="separator"></div>
+
+                                        <div class="user-icon icon-archive-a">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="user-icon icon-favorite">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="user-icon icon-reply">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <label class="user-date">
+                                            22 July 2012 - 11:20 PM
+                                        </label>
+
+
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                </div>
+                            </li> 	
+                            <li class="user-online">
+                                <div class="backgroud-left">
+
+                                    <div class="background-left-top">
+                                    </div>
+                                    <div class="background-left-bottom">
+                                    </div>
+                                </div>
+                                <div class="user-avatar" style="background-image: url('_assets/images/songoku.jpg');">
+
+                                </div>
+                                <div class="user-header">
+                                    <label class="user-name">
+                                        Pharetra Tristique Ultricies	
+                                    </label>
+                                    <div class="right">
+                                        <div class="user-icon icon-delete">
+                                        </div>
+                                        <div class="separator"></div>
+
+                                        <div id="ui-archives-shortcut" class="user-icon icon-archive">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div id="ui-favorites-shortcut" class="user-icon icon-favorite-a">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="user-icon icon-reply">
+                                        </div>
+                                        <div class="separator"></div>
+
+                                        <label class="user-date">
+                                            12 July 2012 - 11:20 PM
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                </div>
+                            </li>
+                            <li class="user-off">
+                                <div class="backgroud-left">
+
+                                    <div class="background-left-top">
+                                    </div>
+                                    <div class="background-left-bottom">
+                                        <div class="reply-icon">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-avatar" style="background-image: url('_assets/images/Fisil-LoginScreen-Portrait-V1_03.png');">
+                                </div> 
+
+                                <div class="user-header">
+                                    <label class="user-name">
+                                        Pharetra Tristique Ultricies	
+                                    </label>
+                                    <div class="right">
+                                        <div class="user-icon icon-delete">
+                                        </div>
+                                        <div class="separator"></div>
+
+                                        <div class="user-icon icon-archive-a">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <div class="user-icon icon-favorite">
+                                        </div>
+                                        <div class="separator"></div>
+                                        <label class="user-date">
+                                            12 July 2012 - 11:20 PM
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                    Try disabling network prediction by following these steps: Go to the wrench menu > Settings > Show advanced settings... and deselect "Predict network actions to improve page load performance." If this does not resolve the issue, we recommend selecting this option again for improved performance.
+                                </div>
+                            </li> 			
+                        </ul>
+                    </div><!-- END GROUP UI -->
+
+                    <!-- Favorite UI-->
+                    <div id="ui-favorites" style="display: none;" class="ui-hidden">
+                        <!--Favorite layout-->
+                        <div class="no-result" id="noti-of-favorite"><i>No Data!!!</i></div>
+                        <ul style="display: block;" class="content-ul" id="current-content4">
+
+                        </ul>
+                    </div><!-- END Favorite UI-->
+                    <!-- Archive UI-->
+                    <div id="ui-archives" style="display: none;" class="ui-hidden">
+                        <!--Archive layout-->
+                        <div class="no-result" id="noti-of-archive"><i>No Data!!!</i></div>
+                        <ul style="display: block;" class="content-ul" id="current-content5">
+                        </ul>
+                    </div><!-- END Archive UI-->
+                    <!-- TRASH UI-->
+                    <div id="ui-trash" style="display: none;" class="ui-hidden">
+                        <div class="no-result" id="noti-of-trash"><i>No Data!!!</i></div>
+                        <ul style="display: block;" class="content-ul" id="current-content6">
+                        </ul>
+                    </div><!-- END Trash UI-->
+                    <!-- Setting UI-->
+                    <div id="ui-setting" style="display: none;" class="ui-hidden">
+                        <div class="setting-head">
+                            Account Setting         <i><label style="color: green" id="st-notify-msg"></label></i>
+                        </div>
+                        <div class="content-ul">
+                            <div style="padding:20px;border-bottom: 1px solid #9A9A9A; margin: 0 20px;">
+                                <div class="setting-name">
+                                    <label id="st-name" class="label-name">Your Name</label>
+                                    <label id="st-website" class="label-domain">www.yourdomain.com</label>
+                                </div>
+                            </div>
+                            <div class="setting-info">
+                                <ul>
+                                    <li class="label">First Name</li>
+                                    <li class="setting-input">
+                                        <input id="txt-fist-name" type="text" name="first-name"></input>
+                                    </li>
+                                    <li class="label">Last Name</li>
+                                    <li class="setting-input">
+                                        <input id="txt-last-name" type="text" name="last-name"></input>
+                                    </li>
+                                    <li class="label">E-mail Adress</li>
+                                    <li class="setting-input">
+                                        <input id="txt-email" type="text" name="email"></input>
+                                    </li>
+                                    <li class="label">Website</li>
+                                    <li class="setting-input">
+                                        <input id="txt-website" type="text" name="website"></input>
+                                    </li>
+                                    <li class="label">Profile Picture</li>
+                                    <div class="setting-name setting-choose-picture">
+                                        <!--<button class="input-choose-file">&nbsp;</button>-->
+                                        <input id="input-choose-file" type="file" accept="image/*" onchange="checkFileSize()"/>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="setting-info setting-change-pass">
+                                <div class="setting-head">Change Password</div>
+                                <ul>
+                                    <li class="label">Old Password</li>
+                                    <li class="setting-input">
+                                        <input type="password" name="old-password"></input>
+                                    </li>
+                                    <li class="label">New Password</li>
+                                    <li class="setting-input">
+                                        <input type="password" name="new-password"></input>
+                                    </li>
+                                    <li class="label">Re-type Password</li>
+                                    <li class="setting-input">
+                                        <input type="password" name="re-password"></input>
+                                    </li>
+
+                                </ul>
+                                <div class="setting-change-pass-bottom"></div>
+                            </div>
+                            <div class="setting-bottom">
+                                <button id="setting-save" class="setting-save"></button>
+                            </div>
+                        </div>
+                    </div><!-- END Archive UI-->
+                </div><!-- End primary content-->
+            </div>
+
+            <div id="ui-logout-dialog" class="ui-logout-diaglog" style="display: none;">
+                <div style="width:250px;height:124px;">
+                    <div id="ui-logout-icon" class="ui-logout-icon">
+                        <div class="img-logout"></div>
+
+                        <label>Log Out</label>
+                    </div>
+                    <div id="ui-switch-icon" class="ui-switch-icon">
+                        <div class="img-switch"></div>
+
+                        <label>Switch User</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="hidden" id="ui-signedin-checker" value="0" />
+        </div>
+    </body>
+</html>

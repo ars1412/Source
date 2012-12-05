@@ -1,0 +1,17 @@
+{
+    "name": "application-name"
+    , 
+    "version": "0.0.1"
+    , 
+    "private": true
+    , 
+    "dependencies": {
+        "socket.io": "0.9.6",
+        "express": "2.5.11",
+        "mongoose": "2.7.1", 
+        "jade": ">= 0.0.1",
+        "formidable": ">=1.0.11",
+        "node-static": ">=0.6.2",
+        "imagemagick": ">=0.1.2"
+    }
+}

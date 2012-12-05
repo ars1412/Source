@@ -1,0 +1,1097 @@
+body{
+    color: #707070;
+    font-family: arial;
+    font-size: 13px;
+    margin: 0 auto;
+}
+li{
+	list-style: none;
+}
+.container{
+    background: url("../images/Fisil-LogOut-Switch-V1.png") no-repeat scroll center 0 transparent;
+    height: 1024px;
+    margin: 0 auto;
+    padding: 8px 10px;
+    text-align: center;
+    width: 748px;
+    margin: 5px auto 0;
+}
+.header .logo{
+	float:left;
+}
+.header{
+	position: relative;
+	width: 100%;
+}
+.header .search{
+	background: url("../images/Fisil-Archive-V1_03.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    height: 28px;
+    width: 202px;
+}
+.search .search-text{
+    border: medium none;
+    float: left;
+    margin-left: 7px;
+    margin-top: 5px;
+    width: 165px;
+}
+.search .search-btn{
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 20px;
+}
+.content{
+	background: url("../images/Fisil-MainBg.png") no-repeat scroll -11px -60px transparent;
+    float: left;
+    height: 100%;
+    margin-top: 10px;
+    width: 100%;	
+}
+.menu-left{
+	float:left;
+	width:60px;
+	color:#fff;
+}
+.menu-left li{
+    float: left;
+    list-style: none outside none;
+    height: 90px;
+}
+.menu-left ul{
+	margin: 0;
+    padding: 0;
+}
+.menu-left li div.logo{
+    height: 40px;
+    list-style: none outside none;
+    width: 50px;
+    cursor: pointer;
+}
+.menu-left li label{
+	  text-align: center;
+}
+.menu-left li.message-a div.logo{
+	   background: url("../images/Fisil-Archive-V1_message-a.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.message div.logo{
+	   background: url("../images/Fisil-Archive-V1_message.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.message div.logo:hover{
+	   background: url("../images/Fisil-Archive-V1_message-a.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.contact div.logo{
+	background: url("../images/Fisil-Archive-V1_contact.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.contact div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_contact-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.contact-a div.logo{
+	background: url("../images/Fisil-Archive-V1_contact-a.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.groups div.logo{
+	background: url("../images/Fisil-Archive-V1_group.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.groups div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_group-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.groups-a div.logo{
+	background: url("../images/Fisil-Archive-V1_group-a.png") no-repeat scroll center 6px transparent;
+}
+.menu-left li.favorite div.logo{
+	background: url("../images/Fisil-Archive-V1_favorite.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.favorite div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_favorite-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.favorite-a div.logo{
+	background: url("../images/Fisil-Archive-V1_favorite-a.png") no-repeat scroll center 7px transparent
+}
+.menu-left li.archive div.logo{
+	background: url("../images/Fisil-Archive-V1_archive.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.archive div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_archive-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.archive-a div.logo{
+	background: url("../images/Fisil-Archive-V1_archive-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.trash div.logo{
+	background: url("../images/Fisil-Archive-V1_trash.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.trash div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_trash-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.trash-a div.logo{
+	background: url("../images/Fisil-Archive-V1_trash-a.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.setting div.logo{
+	background: url("../images/Fisil-Archive-V1_setting.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.setting div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_setting-a.png") no-repeat scroll center 12px transparent;
+}
+.menu-left li.setting-a div.logo{
+	background: url("../images/Fisil-Archive-V1_setting-a.png") no-repeat scroll center 7px transparent;
+}
+.menu-left li.logout div.logo{
+	background: url("../images/Fisil-Archive-V1_logout.png") no-repeat scroll center 9px transparent;
+}
+.menu-left li.logout div.logo:hover{
+	background: url("../images/Fisil-Archive-V1_logout-a.png") no-repeat scroll center 9px transparent;
+}
+.menu-left li.logout-a div.logo{
+	background: url("../images/Fisil-Archive-V1_logout-a.png") no-repeat scroll center 6px transparent;
+}
+.user-online{
+	background: url("../images/avatar_center.png") repeat-y scroll 22px 0 transparent;
+	min-height: 135px;
+	position: relative;
+	float: left;
+}
+.content-center{
+    float: left;
+    height: 940px;
+    overflow: auto;
+    width: 686px;
+    margin-left:2px;
+}
+.user-header{
+	border-bottom: 1px solid #CCCCCC;
+    float: left;
+    padding-bottom: 4px;
+    width: 586px;
+}
+.user-header label.user-name{
+	 color: #F14523;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+.user-header .right{
+	float:right;
+}
+.user-header .user-date{
+    font-size: 12px;
+    float: right;
+}
+.separator{
+	background: url("../images/separator.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    height: 18px;
+    margin: -1px 5px 0;
+    width: 1px;
+}
+.icon-favorite-a{
+    background: url("../images/icon-favorite-a.png") no-repeat scroll 0 0 transparent;
+}
+.icon-favorite{
+    background: url("../images/icon-favorite.png") no-repeat scroll 0 0 transparent;
+}
+.icon-favorite:hover{
+    background: url("../images/icon-favorite-a.png") no-repeat scroll 0 0 transparent;
+}
+.icon-favorite-a:hover{
+	background: url("../images/icon-favorite.png") no-repeat scroll 0 0 transparent;	
+}
+.user-icon{
+ 	height: 17px;
+    margin-top: -2px;
+    width: 19px;
+    cursor: pointer;
+    float: right;	
+}
+.icon-archive-a{
+	 background: url("../images/icon-archive-a.png") no-repeat scroll 0 0 transparent;	
+	 width: 20px;
+}
+.icon-archive-a:hover{
+	 background: url("../images/icon-archive.png") no-repeat scroll 0 0 transparent;	
+	 width: 20px;
+}
+.icon-archive:hover{
+	background: url("../images/icon-archive-a.png") no-repeat scroll 0 0 transparent;		
+	width: 20px;
+}
+.icon-archive{
+	 background: url("../images/icon-archive.png") no-repeat scroll 0 0 transparent;	
+	 width: 20px;
+}
+.icon-delete{
+	 background: url("../images/icon-delete.png") no-repeat scroll 0 0 transparent;	
+	 width: 15px;
+}
+.icon-delete:hover{
+	 background: url("../images/icon-delete-a.png") no-repeat scroll 0 0 transparent;	
+}
+.icon-delete-a{
+	 background: url("../images/icon-delete-a.png") no-repeat scroll 0 0 transparent;	
+	 width: 15px;
+}
+
+.icon-restore{
+	 background: url("../images/ui-restore.png") no-repeat scroll 0 0 transparent;	
+	 width: 15px;
+}
+.icon-restore:hover{
+	 background: url("../images/ui-restore-a.png") no-repeat scroll 0 0 transparent;	
+}
+.icon-restore-a{
+	 background: url("../images/ui-restore-a.png") no-repeat scroll 0 0 transparent;	
+	 width: 15px;
+}
+.user-text{
+    float: left;
+    margin-top: 8px;
+    text-align: left;
+    width: 586px;
+}
+.write-message .user-text{
+    display: inline-block;
+    margin-top: 8px;
+    text-align: left;
+    width: 586px;
+    margin-left: -15px;
+    float: none;
+} 
+.user-off{
+    background: url("../images/avatar_center_off.png") repeat-y scroll 22px 0 transparent;
+    float: left;
+    min-height: 135px;
+    position: relative;
+}
+.content-center li{
+	margin-bottom: 20px;
+}
+.user-avatar{
+ 	background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 21px 21px 21px 21px;
+    height: 40px;
+    left: 6px;
+    position: absolute;
+    top: 5px;
+    width: 40px;
+}
+.user-reply-icon{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 21px 21px 21px 21px;
+    float: left;
+    height: 14px;
+    margin-left: 5px;
+    margin-top: 11px;
+    width: 14px;
+}
+.write-message {
+    background: url("../images/write-message-center.png") repeat-y scroll -8px 0 transparent;
+    min-height: 394px;
+    position: relative;
+    padding-left: 60px;
+}
+
+.write-message-left{
+   	background: url("../images/write-message-top.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 100%;
+    left: -8px;
+    position: absolute;
+    top: -1px;
+    width: 52px;
+}
+.write-message-bottom{
+    background: url("../images/write-message-bottom.png") no-repeat scroll 0 0 transparent;
+    bottom: -3px;
+    float: left;
+    height: 94px;
+    left: 0;
+    position: absolute;
+    width: 52px;
+}
+.write-message-left .wms-camera{
+	background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/write-message-camera.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 62px;
+    float: left;
+    height: 12px;
+    left: 19px;
+    position: absolute;
+    width: 14px;
+    cursor: pointer;
+}
+.write-message-left .wms-attach{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/write-message-attach.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 3px;
+    cursor: pointer;
+    float: left;
+    height: 13px;
+    left: 20px;
+    position: absolute;
+    width: 12px;
+}
+.message-text-box{
+    background:none;
+    border: medium none;
+    float: left;
+    height: 194px;
+    padding: 0 10px;
+    resize: none;
+    width: 566px;
+}
+.div-message-text-box{
+	background: url("../images/text-box-write-message.png") no-repeat scroll 0 0 transparent;	
+	float: left;
+    width: 586px;
+   	height: 214px;
+   	margin:5px 0;
+    padding-top: 5px;
+}
+ul.content-ul{
+	padding-left:22px;
+	margin-top:23px;
+}
+textarea{
+	resize:none;
+}
+.reply-message{
+    background: url("../images/button-message.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    float: right;
+    height: 28px;
+    margin-right: 21px;
+    width: 82px;
+}
+.reply-message:hover{
+	opacity:0.8;	
+}
+.backgroud-left {
+    float: left;
+    margin-right: 10px;
+}
+.ui-logout-diaglog{
+	background: url("../images/ui-logout-frame.png") no-repeat scroll 0 0 transparent;
+    height: 124px;
+    width: 250px;
+   position: fixed;
+    top: 25%;
+     left: 40%;
+}
+.ui-container-dim{
+	background: none repeat scroll 0 0 #000000;
+    float: left;
+    height: 100%;
+    margin-top: -7px;
+    opacity: 0.2;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.ui-logout-icon{
+	float: left;
+    margin-top: 32px;
+    padding-left: 40px;
+    width: 85px;
+	cursor: pointer;
+}
+div.img-logout {
+	float: right;
+    margin-left: 35px;
+    margin-right: 20px;
+	height: 46px;
+	width: 46px;
+	background: url('../images/ui-logout.png') no-repeat;
+}
+div.img-logout:hover {
+
+	background: url('../images/ui-logout-a.png') no-repeat;
+}
+
+div.img-switch {
+	float: left;
+    margin-left: 20px;
+	height: 46px;
+	width: 45px;
+	background: url('../images/ui-switch.png') no-repeat;
+}
+div.img-switch:hover {
+	height: 46px;
+	width: 45px;
+	background: url('../images/ui-switch-a.png') no-repeat;
+}
+.ui-logout-icon img{
+  	float: right;
+    margin-left: 35px;
+    margin-right: 20px;
+}
+.ui-logout-icon label{
+   float: left;
+    text-align: center;
+    width: 85px;
+}
+
+.ui-switch-icon{
+	  float: left;
+    margin-top: 32px;
+    width: 85px;
+	cursor: pointer;
+}
+.ui-switch-icon:hover {
+	
+}
+.ui-switch-icon label{
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+    width: 85px;
+}
+.ui-switch-icon img{
+	   float: left;
+    margin-left: 20px;
+}
+.background-left-top{
+    background: url("../images/avatar_top.png") no-repeat scroll 0 -1px transparent;
+    float: left;
+    height: 100px;
+    width: 52px;
+}
+.user-off .background-left-top{
+    background: url("../images/avatar_top_off.png") no-repeat scroll 0 -1px transparent;
+    float: left;
+    height: 100px;
+    width: 52px;
+}
+.background-left-bottom{
+	background: url("../images/avatar_bottom.png") no-repeat scroll 0 -1px transparent;
+    bottom: -1px;
+    float: left;
+    height: 35px;
+    left: 13px;
+    position: absolute;
+    width: 25px;
+}
+.user-off .background-left-bottom{
+    background: url("../images/avatar_bottom_off.png") no-repeat scroll 0 -1px transparent;
+    bottom: -5px;
+    float: left;
+    height: 35px;
+    left: 14px;
+    position: absolute;
+    width: 25px;
+}
+.groups-head{
+	border-bottom: 1px solid #9A9A9A;
+    height: 55px;
+    margin-left: 18px;
+    width: 650px;
+}
+.groups-inhouse-team{
+	background: url("../images/btn-inhouse-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 131px;
+    cursor: pointer;
+}
+.groups-pro-team{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-red{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-yellow{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-blue{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-orange{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-grey{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+.groups-no_color{
+  	background: url("../images/btn-pro-team-group.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 114px;
+}
+
+
+.groups-add{
+   background: url("../images/btn-group-add.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    margin-top: 18px;
+    padding-top: 2px;
+    width: 41px;
+}
+.groups-add:hover{
+	background: url("../images/btn-group-add-hover.png") no-repeat scroll 0 0 transparent;	
+}
+.setting-head{
+    border-bottom: 1px solid #9A9A9A;
+    font-size: 16px;
+    font-weight: bold;
+    height: 28px;
+    margin: 0 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+.setting-name{
+	background: url("../images/setting-name-bg.png") no-repeat scroll 9px 9px transparent;
+    border: 1px solid #2C9FA3;
+    border-radius: 5px 5px 5px 5px;
+    height: 50px;
+    padding-left: 65px;
+    padding-top: 20px;
+    width: 250px;	
+}
+.contact-friend .setting-name{
+	background: url("../images/setting-name-bg.png") no-repeat scroll 9px 9px transparent;	
+}
+.contact-not-friend .setting-name{
+	background: url("../images/contacts/contacts-V1-1_63.png") no-repeat scroll 9px 9px transparent;		
+}
+.setting-choose-picture{
+	border:1px solid #9a9a9a;
+	background: url("../images/setting-name-choose-file.png") no-repeat scroll 9px 9px transparent;
+}
+.setting-name label.label-name{
+  	color: #2D9FA3;
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    width: 200px;
+    font-size: 16px;
+}
+.setting-name label.label-domain{
+    color: #8C8C8C;
+    float: left;
+    text-align: left;
+    width: 200px;
+}
+.setting-info li.label{
+  font-weight: bold;
+    margin: 20px 0 4px;
+    text-align: left;
+}
+.setting-info li{
+	text-align: left;
+	margin:0;
+}
+.setting-info li.setting-input input{
+	background: url("../images/settings-input-name.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 26px;
+    padding: 1px 5px;
+    width: 305px;
+}
+ input.input-choose-file{
+	background: url("../images/settings-input-name.png") no-repeat scroll 0 0 transparent;	
+}
+
+span.browse_but { 
+    font-family:Arial; 
+    width:65px;
+    height:20px; 
+    text-align:center; 
+    line-height:18px; 
+    margin:0px;
+    font-size:10px; 
+    font-weight:bold;
+    border:1px solid #ccc;
+    float:left;
+    cursor:pointer;
+    padding:0px; 
+    background:#eee; 
+    display:block;
+    float:left; 
+    overflow:hidden; 
+}
+
+span.browse_but font { 
+    font-size:16px; 
+    color:#c00; 
+}
+
+span.browse_but input { 
+    position:absolute; 
+    cursor:pointer;
+    right:0px; 
+    top:0px; 
+    height:20px; 
+    width:195px; 
+    margin:0px;
+    opacity:0; 
+    filter:alpha(opacity=0);
+}
+
+.setting-info .input-choose-file{
+	background: url("../images/setting-input-choose-file.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    float: left;
+    height: 29px;
+    margin-left: 15px;
+    width: 116px;
+	cursor: pointer;
+}
+.setting-info .input-choose-file:active,.setting-info .input-choose-file:hover{
+	opacity:0.9;
+}
+.setting-change-pass p.p-head{
+	float:left
+}
+.setting-change-pass-bottom{
+	border-bottom: 1px solid #9A9A9A;
+    margin: 22px 20px;
+}
+.setting-save{
+	background: url("../images/setting-change.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    float: right;
+    height: 29px;
+    margin-right: 18px;
+    margin-top: -5px;
+    width: 125px;
+}
+.setting-save:hover{
+	background: url("../images/setting-change-a.png") no-repeat;	
+}
+.contact-column{
+	float:left;
+	margin-left: 20px;
+	width:315px;
+}
+.contact-head{
+   border-bottom: 1px solid #9A9A9A;
+    color: #8C8C8C;
+    font-weight: bold;
+    margin-top: 17px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.contact-head .add-icon{
+	background: url("../images/contacts/contact-add.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 30px;	
+}
+.contact-head .add-icon:hover{
+	background: url("../images/contacts/contact-add-a.png") no-repeat scroll 0 0 transparent;
+}
+.contact-content .setting-name{
+	position:relative;
+	padding-top: 16px;
+	height:54px;
+}
+.contact-column .contact-avatar{
+    background-position: center center;
+    border-radius: 20px 20px 20px 20px;
+    height: 40px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 40px;
+    background-size: cover;
+}
+.contact-action .action-add{
+    background: url("../images/contacts/cntacts-V1-1_78.png") no-repeat scroll 0 0 transparent;
+    height: 15px;
+    margin-left: 11px;
+    margin-top: 2px;
+    width: 21px;		
+}
+.contact-not-friend .contact-action .action-add{
+	background: url("../images/contacts/contacts-V1-1_19.png") no-repeat scroll 0 0 transparent;		
+}
+.contact-not-friend .contact-action .action-add:hover{
+	background: url("../images/contacts/cntacts-V1-1_78.png") no-repeat scroll 0 0 transparent;
+}
+.contact-action .action-add:hover{
+	background: url("../images/contacts/contacts-V1-1_19.png") no-repeat scroll 0 0 transparent;	
+}
+.action-delete{
+	background: url("../images/contacts/contacts-V1-1_81.png") no-repeat scroll 0 0 transparent;
+}
+.action-delete:hover{
+	background: url("../images/contacts/contacts-V1-1_56.png") no-repeat scroll 0 0 transparent;
+}
+.contact-action i{
+	  cursor: pointer;
+    float: left;
+    height: 13px;
+    margin: 5px 15px;
+    width: 13px;
+}
+.contact-action{
+	border-left: 1px solid #2C9FA3;
+    float: left;
+    height: 50px;
+    margin-top: -5px;;
+    width: 48px;
+}
+.contact-group{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EBEBEB;
+    border-color: #9B9B9B -moz-use-text-color -moz-use-text-color #9B9B9B;
+    border-image: none;
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid none none solid;
+    border-width: 1px medium medium 1px;
+    float: left;
+    margin-top: 20px;
+    min-height: 160px;
+    width: 315px;
+    color:#8c8c8c;
+}
+.contact-group-brown{
+	background: none repeat scroll 0 0 #ebebeb;	
+	color:#fff;	                   
+}
+.contact-group-yellow{
+	  background: none repeat scroll 0 0 #ffb914;	
+	  color:#fff;	
+}
+.contact-group-orange{
+	background: none repeat scroll 0 0 #ff8826;	
+	color:#fff;	
+}
+.contact-group-blue{
+	background: none repeat scroll 0 0 #2c9fa3;	
+	color:#fff;		
+}
+.contact-group-red{
+	background: none repeat scroll 0 0 #f03813;		
+	color:#fff;	
+}
+.contact-group-grey{
+	background: none repeat scroll 0 0 #043d51;		
+	color:#fff;	
+}
+.contact-g-head{
+    color: #8C8C8C;
+    float: left;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-top: 12px;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 200px;
+}
+.contact-g-h-action{
+	float: left;
+	margin-top: 12px;
+	width: 90px;
+	position:relative;
+}
+.contact-g-h-action i.add-icon{
+	background: url("../images/contacts/contacts-V1-1_19.png") no-repeat scroll 0 0 transparent;
+    border-right: 1px solid #8C8C8C;
+    cursor: pointer;
+    float: left;
+    height: 17px;
+    width: 28px;
+}
+.contact-g-h-action i.set-background{
+   	background: url("../images/contacts/contacts-V1-1_22.png") no-repeat scroll 0 0 transparent;
+    border-right: 1px solid #8C8C8C;
+    cursor: pointer;
+    float: left;
+    height: 17px;
+    margin-left: 9px;
+    width: 25px;
+}
+ i.delete-icon{
+    background: url("../images/contacts/contacts-V1-1_16.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: left;
+    height: 18px;
+    margin-left: 9px;
+    width: 15px;
+}
+.contact-g-h-action .action-set-background{
+	background: url("../images/contacts/contact-set-ground.png") no-repeat scroll 0 0 transparent;
+    height: 36px;
+    left: -9px;
+    position: absolute;
+    top: -33px;
+    width: 110px;
+    padding-left: 1px;
+}
+.action-set-background .i-color{
+	background: url("../images/contacts/table-color.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 6px;
+    width: 15px;
+    cursor: pointer;
+}
+.action-set-background .i-color-yellow{
+	background: url("../images/contacts/table-color.png") no-repeat scroll 0 0 transparent;		
+}
+.action-set-background .i-color-orange{
+	background: url("../images/contacts/table-color.png") no-repeat scroll -20px 0 transparent;	
+}
+.action-set-background .i-color-red{
+	background: url("../images/contacts/table-color.png") no-repeat scroll -40px 0 transparent;	
+}
+.action-set-background .i-color-blue{
+	background: url("../images/contacts/table-color.png") no-repeat scroll -60px 0 transparent;	
+}
+.action-set-background .i-color-grey{
+	background: url("../images/contacts/table-color.png") no-repeat scroll -80px 0 transparent;	
+}
+
+.contact-group .setting-name{
+	background: url("../images/setting-name-bg.png") no-repeat scroll -1px  9px transparent;
+    float: left;
+    height: 50px;
+    margin-left: 12px;
+  	padding-left: 57px;
+    padding-top: 15px;
+    width: 225px;
+    border:none;
+    border-top:1px solid #8c8c8c;
+    border-radius: 0 0 0 0;
+    position:relative;
+}
+.contact-group .contact-action{
+	border-left: none;
+    float: left;
+    height: 45px;
+    margin-top: 2px;
+    width: 1px;
+}
+.contact-group i.action-delete{
+	background: url("../images/contacts/contact-delete-brow.png") no-repeat scroll 0 0 transparent;	
+}
+.contact-column .contact-group .contact-avatar {
+    background-position: center center;
+    border-radius: 20px 20px 20px 20px;
+    height: 40px;
+    left: 5px;
+    position: absolute;
+    top: 15px;
+    width: 40px;
+}
+.contact-group-common{
+	color:#fff;
+}
+.contact-group-common .contact-g-head{
+	color:#fff;
+}
+.contact-group-common .setting-name label.label-name{
+	color:#fff;	
+}
+.contact-group-common .setting-name{
+	border-color: #FFCE5C -moz-use-text-color -moz-use-text-color;
+}
+.contact-group-common .setting-name label.label-domain{
+	color:#fff;	
+}
+.contact-group-common .contact-g-h-action i.add-icon{
+	background: url("../images/contacts/contacts-V1-1_49.png") no-repeat scroll 0 0 transparent;
+}
+.contact-group-common .contact-g-h-action i.set-background{
+	background: url("../images/contacts/contacts-V1-1_44.png") no-repeat scroll 0 0 transparent;	
+}
+.contact-group-common i.delete-icon {
+    background: url("../images/contacts/contacts-V1-1_47.png") no-repeat scroll 0 0 transparent;
+}
+.contact-group-common i.action-delete {
+    background: url("../images/contacts/contacts-V1-1_60.png") no-repeat scroll 0 0 transparent;
+}
+.contact-search{
+	background: url("../images/contacts/contact-search.png") no-repeat scroll 0 0 transparent;
+    height: 27px;
+    margin-top: 20px;
+    width: 314px;
+}
+.contact-search .contact-search-text{
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    float: left;
+    height: 21px;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 280px;	
+   color: #8C8C8C;
+}
+.contact-search .contact-search-btn{
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;	
+}
+.contact-search-result .setting-name{
+	border:1px solid #8c8c8c;
+}
+.contact-search-result .setting-name label.label-name{
+	color:#8c8c8c;	
+}
+.contact-search-result .contact-action{
+	border-left: 1px solid #8C8C8C;
+	height: 37px;
+	padding-top: 13px;
+}
+.contact-search-result .contact-action .action-add {
+	background: url("../images/contacts/contact-add.png") no-repeat scroll 0 0 transparent;	
+	background-size: cover;
+}
+.contact-search-result .contact-action .action-add:hover {
+	background: url("../images/contacts/contact-add-a.png") no-repeat scroll 0 0 transparent;	
+	background-size: cover;
+}
+.contact-create-new-g{
+	background: url("../images/contacts/contact-create-group.png") no-repeat scroll 0 0 transparent;	
+    height: 50px;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 315px;
+}
+.slimScrollDiv{
+	margin-top:2px;
+}
+.background-left-bottom .reply-icon{
+    background: url("../images/reply-icon.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: left;
+    height: 14px;
+    margin-left: 6px;
+    margin-top: 15px;
+    width: 14px;
+}
+.icon-reply{
+        background: url("../images/reply_icon.png") no-repeat scroll 2px 1px transparent
+}
+.compose-msg{
+	text-align: left;
+	color:#000;
+}
+.compose-msg label{
+	display: inline-block;
+	width: 70px;
+    float: left;	
+}
+.compose-msg input[type="text"], .compose-msg textarea{
+	border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    padding: 0 2px;
+    width: 562px;
+}
+.compose-msg textarea{
+	height: 300px;
+}

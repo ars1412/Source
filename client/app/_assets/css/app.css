@@ -1,0 +1,199 @@
+/* 
+    Document   : app
+    Created on : Sep 13, 2012, 9:25:46 PM
+    Author     : KHANH
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    margin:0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: #000;
+    height:100%; 
+    background: url('../images/Fisil-Bg.png');
+}
+/*fig bug chrome*/
+body.body{
+ 	text-align: center;
+}
+body.body-landing-page {
+
+}
+div.ui-page {
+/*    background: url('../images/Fisil-Bg.png');*/
+    background-repeat:repeat;
+    height: auto;
+    width: auto;
+/*    min-height: 768px;*/
+}
+
+*:focus {outline: none;}
+
+
+div.ui-footer {
+    height: 50px;
+    background: none;
+    border: none;
+}
+div.login {
+    display: inline-block;
+    position: relative;
+    width:375px;
+/*    background: url("../images/Fisil-LoginScreen-Portrait-V1_03_072.png") no-repeat */
+    
+}
+.login .login-input{
+	margin:5px  0;
+	width:440px;
+	
+}
+
+div.ui-header {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    padding-top: 5%;
+    text-align: center;
+}
+
+input.username {
+    background: url("../images/Fisil-LoginScreen-Portrait-V1_13.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    border-radius: 0 0 0 0;
+    box-shadow: 0 0 0 transparent;
+    display: block;
+    height: 45px;
+    padding-right: 36px;
+    width: 300px;
+    padding-left: 10px;
+}
+input.password {
+    background: url('../images/Fisil-LoginScreen-Portrait-V1_16.png');
+    border: medium none;
+    background-repeat:no-repeat;
+    -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, .0);
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, .0);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .0);
+    border-radius: 0px 0px 0px 0px;
+    display: block;
+    height: 45px;
+    padding-right: 36px;
+    padding-left: 10px;
+     width: 300px
+}
+input.username:active{
+	border:none;
+}
+
+.ui-content {
+    padding:0;
+    text-align: center;
+}
+.ui-avatar{
+    float:left;
+    margin: 6px;
+}
+div.login .ui-go-btn{
+    cursor: pointer;
+    left: 342px;
+    position: absolute;
+    top: 26px;
+}
+.ui-keep-login-on{
+    background: url("../images/Fisil-LoginScreen-Horizontal-V1_17 copy.png") no-repeat scroll 0 0 transparent;
+}
+.ui-keep-login-off{
+    background: url("../images/Fisil-LoginScreen-Horizontal-V1_20 copy.png") no-repeat scroll 0 0 transparent;
+}
+.ui-keep-login{
+    cursor: pointer;
+    float: left;
+    height: 26px;
+    margin-left: 45px;
+    width: 48px;	
+}
+label.ui-remember{
+    float: left;
+    margin-left: 4px;
+}
+.login a.ui-lost-pass{
+    bottom: 12px;
+    color: #FFFFFF;
+    float: left;
+    font-weight: normal;
+    margin-left: 27px;
+    position: absolute;
+    right: 0px;
+    text-decoration: none;
+    width: 125px;
+
+}
+.login a#ui-sign-up{
+	float: left;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+	position: absolute;
+	right: 71px;
+}
+.login a.ui-lost-pass:HOVER, .login a#ui-sign-up:HOVER{
+	text-decoration: underline;
+}
+.login a.ui-lost-pass:visited {
+    background-color:#FFF;
+}
+div#version {
+	display: block;
+	text-align: center;
+	text-decoration: underline; 
+	font-weight: bold;
+	margin-top: 50px;
+	color: white;
+	postion: relative;
+	
+}
+.ui-footer-fisil{
+    bottom: 10px;
+	position: fixed;
+    text-align: center;
+    width: 100%;
+}
+.ui-ajax-loader{
+    margin-top: 28%;
+    width: 100%;
+}
+.ui-splash-loading{
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: url("../images/Fisil-SplashScreenPortrait-V1.png") no-repeat scroll center center transparent;
+    text-align: center;
+    min-height: 640px;
+}
+
+div.error-msg i{
+    color: red;
+}
+
+div.ui-compose {
+    cursor: pointer;
+    position: absolute;
+    right: 205px;
+    top: 6px;
+	height: 28px;
+}
+
+div.content-center {
+    /*overflow: hidden;*/
+}
+
+/* Tiny Scrollbar */
+/*#content-center .viewport { width: 500px; height: 940px;; overflow: hidden; position: relative; }
+#content-center .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#content-center .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+#content-center .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+#content-center .thumb { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#content-center .thumb .end { background: transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+#content-center .disable { display: block; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }*/
+
